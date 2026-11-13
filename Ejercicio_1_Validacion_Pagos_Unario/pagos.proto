@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package pagos;
+
+// Servicio gRPC unario
+service ValidadorPagos {
+    rpc VerificarTransaccion (SolicitudPago) returns (ResultadoPago);
+}
+
+message SolicitudPago {
+    string id_transaccion = 1;
+    string numero_tarjeta = 2;
+    double monto = 3;
+    string codigo_moneda = 4;
+    string pais_origen = 5;
+}
+
+message ResultadoPago {
+    bool aprobado = 1;
+    string codigo_autorizacion = 2;
+    string motivo_rechazo = 3;
+}

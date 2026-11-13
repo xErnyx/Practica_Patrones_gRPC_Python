@@ -1,0 +1,63 @@
+# ==========================================
+# Entornos virtuales de Python
+# ==========================================
+.venv/
+venv/
+env/
+ENV/
+
+# ==========================================
+# Caché y archivos compilados de Python
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ==========================================
+# IDEs y Editores (PyCharm / VSCode)
+# ==========================================
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ==========================================
+# Variables de entorno y registros (logs)
+# ==========================================
+.env
+.env.*
+*.log
+
+# ==========================================
+# Archivos del Sistema Operativo (Windows / macOS)
+# ==========================================
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# ==========================================
+# Archivos autogenerados de gRPC / Protobuf (Opcional)
+# Descomenta las siguientes líneas si prefieres subir
+# únicamente los archivos .proto y no los generados:
+# ==========================================
+# *_pb2.py
+# *_pb2_grpc.py
+# *_pb2.pyi
