@@ -82,25 +82,35 @@ Monitor de cadena de frío para logística farmacéutica. El servidor transmite 
 
 ## 🔀 Los patrones, de un vistazo
 
+### 🛒 Ejercicio 1 · Unario (1 → 1)
+
+El cliente envía **una** solicitud y recibe **una** respuesta.
+
 ```mermaid
 sequenceDiagram
-    participant C as 🖥️ Cliente
-    participant S as ⚙️ Servidor
+    participant C as Cliente
+    participant S as Servidor
 
-    rect rgb(230, 244, 255)
-    Note over C,S: 🛒 Ejercicio 1 · Unario (1 → 1)
     C->>S: SolicitudPago
     S-->>C: ResultadoPago
-    end
+```
 
-    rect rgb(232, 248, 238)
-    Note over C,S: 🚚 Ejercicio 2 · Server Streaming (1 → N)
+### 🚚 Ejercicio 2 · Server Streaming (1 → N)
+
+El cliente envía **una** suscripción y recibe **varias** lecturas, una tras otra.
+
+```mermaid
+sequenceDiagram
+    participant C as Cliente
+    participant S as Servidor
+
     C->>S: SuscripcionCamion
     S-->>C: LecturaSensor 1
     S-->>C: LecturaSensor 2
     S-->>C: LecturaSensor N
-    end
 ```
+
+### 📊 Cobertura de patrones gRPC
 
 | Patrón gRPC | Petición | Respuesta | En este repositorio |
 | :--- | :---: | :---: | :---: |
@@ -206,8 +216,6 @@ python client.py
 | 🛡️ **Reglas de negocio** en el servidor | Ambos ejercicios |
 | 🧵 **Servidor concurrente** con `ThreadPoolExecutor` | Ambos ejercicios |
 | 🧪 **Manejo de errores** con `grpc.RpcError` en el cliente | Ambos ejercicios |
-
----
 
 ---
 
