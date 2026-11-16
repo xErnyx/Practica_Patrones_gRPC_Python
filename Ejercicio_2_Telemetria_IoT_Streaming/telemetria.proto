@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package telemetria;
+
+// Servicio gRPC con patrón Server Streaming
+service MonitorCadenaFrio {
+    rpc TransmitirTelemetria (SuscripcionCamion) returns (stream LecturaSensor);
+}
+
+message SuscripcionCamion {
+    string id_camion = 1;
+    int32 intervalo_segundos = 2;
+}
+
+message LecturaSensor {
+    string id_camion = 1;
+    double temperatura_celsius = 2;
+    double latitud = 3;
+    double longitud = 4;
+    string timestamp = 5;
+    bool alerta_critica = 6;
+}
